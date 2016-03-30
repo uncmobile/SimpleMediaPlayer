@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
     public void playSong(View v) {
 
         Log.v("MP", "Play button clicked");
+        //the link is not availabel anymore. Just an example. Also, you can store the audio file in
+        //raw folder and using it by refering the R.rar.filename.
         String str = "http://wwwx.cs.unc.edu/~nirjon/test.mp3";
         try {
             if(mp != null) {
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
     @Override
     protected  void onStop() {
         super.onStop();
+        //always remember to release the resource used by media player.
         if(mp != null) {
             mp.release();
             mp = null;
